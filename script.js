@@ -16,20 +16,37 @@ const handleCategory = async () => {
 };
 
 const handleVideos = async (categoryId) => {
-    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+    // console.log(categoryId);
     const data = await response.json();
     const allData = data.data;
     console.log(allData);
 
+
+
+
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
+    const noContainer = document.getElementById('no-video');
+    noContainer.innerHTML = '';
 
-
-    allData.forEach((video) => {
-        const div = document.createElement('div');
-
-
-        div.innerHTML = `
+    if (allData.length === 0) {
+        const noVideo = document.createElement('div');
+        noVideo.innerHTML = `
+        <div class="text-center items-center">
+        <div class="flex justify-center py-5"><img src="Icon.png" alt="no video worning"></div>
+        <h2 class = "text-3xl py-4 font-bold">Oops !! Sorry, There is no <br> content here</h2>
+    </div>
+        `;
+       noContainer.appendChild(noVideo);
+    }
+    
+    
+    
+    else {
+        allData.forEach((video) => {
+            const div = document.createElement('div');
+            div.innerHTML = `
         <div class="card bg-base-100">
 
         <figure><img src="${video?.thumbnail}" alt="video thumble" class = "rounded-lg h-72 w-full" /></figure>
@@ -51,15 +68,17 @@ const handleVideos = async (categoryId) => {
             </h4>
 
             <div>
-                <h5 class="text-left py-3">${video?.others?.views? video.others.views : " "} views
+                <h5 class="text-left py-3">${video?.others?.views ? video.others.views : " "} views
                 </h5>
             </div>
         </div>
     </div>
 </div>
         `;
-        cardContainer.appendChild(div);
-    });
+            cardContainer.appendChild(div);
+        });
+    }
 }
 
 handleCategory();
+handleVideos("1000");
