@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+    <!-- ........tailwind and daisy ui link.....  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- .............google font link..........  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ....... custom css...  -->
+    <style>
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="md:container md:mx-auto py-5 inter px-3  bg-gradient-to-r from-cyan-500 to-blue-500">
+    <header>
+        <h1 class="text-center text-5xl font-semibold text-gray-800 py-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg">Some Discussion</h1>
+    </header>
+
+    <main>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-6">
+            <!-- .....var card.......  -->
+            <div class="card bg-gradient-to-r from-purple-500 to-pink-500 text-black text-neutral-content">
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title font-semibold">Var</h2>
+                    <p>The var statement declares a variable. Variables are containers for storing information. <br><br>
+                        Hoisting: Variable declarations using var are hoisted to the top of their containing function or
+                        global scope, but not their initializations. <br> <br>Re-Declare: You can re-declare a variable
+                        using var within the same scope</p>
+                </div>
+            </div>
+
+            <!-- .......... let card...........  -->
+            <div class="card bg-gradient-to-r from-purple-500 to-pink-500 text-black text-neutral-content">
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title font-semibold">Let</h2>
+                    <p>Block-scoped: The keyword let in Javascript is used to declare a variable that is block scoped in
+                        JavaScript. <br><br>
+                        Hoisting: Variable declarations using let are hoisted to the top of their block, but not their
+                        initialized. <br> <br> Re-Declare: You can not re-declare a variable
+                        using let within the same scope</p>
+                </div>
+            </div>
+
+            <!-- ............ const card .........  -->
+            <div class="card bg-gradient-to-r from-purple-500 to-pink-500 text-black text-neutral-content">
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title font-semibold">Const</h2>
+                    <p>Block-scoped: The const declaration declares block-scoped local variables. <br><br>
+                        Hoisting: Variable declarations using const are hoisted to the top of their block, but not
+                        initialized. <br> <br> Re-Declare: You can not re-declare a variable
+                        using let within the same scope</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+
+                <!-- ....... null card .........  -->
+                <div class="card bg-gradient-to-r from-purple-500 to-pink-500 text-black text-neutral-content">
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title font-semibold">Null</h2>
+                        <p>1.Explicit absence of a value: You can use null to indicate that a variavle intentionally has
+                            no value or that an objeft property should be empty. <br>
+                            2. Initialization: Sometimes, you may initialize a variable tonull and later assign it a
+                            specific value or object</p>
+                    </div>
+                </div>
+
+                <!-- ........... undefined card........  -->
+                <div class="card bg-gradient-to-r from-purple-500 to-pink-500 text-black text-neutral-content">
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title font-semibold">Undefined</h2>
+                        <p>1.Variavle that is not initialized will give undefined. <br>
+                        2.Funtion with no-return. <br>
+                        3.Prameter that willnot pass. <br>
+                        4.Deleting an element isside an arrey will give undefined. <br>
+                        5.Set a value derectly to undefined. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1">
+            <div class="card bg-gradient-to-r from-purple-500 to-pink-500 text-black text-neutral-content">
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title font-semibold">API</h2>
+                    <p>REST API stands for Representational State Transfer Application Programming Interface. It is a specific type of web-based API  that follows a set of architectural principles and constraints for designing networked applications. REST APIs use HTTP requests to perform various operations on resources, which can be data objects, services, or entities, typically represented in a structured format like JSON or XML.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

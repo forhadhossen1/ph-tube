@@ -93,10 +93,12 @@ handleCategory();
 handleVideos("1000");
 
 convertToHoursMinutes = (postedDate) => {
-    const hours = Math.floor(postedDate / 3600);
-    const minutes = hours % 60;
+    const totalSeconds = Math.floor(postedDate);
 
-    const timeString = `${hours}:hrs ${minutes}:min ago`;
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+    const timeString = `${hours}hrs ${minutes}min ago`;
 
     return timeString;
 }
