@@ -38,18 +38,27 @@ const handleVideos = async (categoryId) => {
         <h2 class = "text-3xl py-4 font-bold">Oops !! Sorry, There is no <br> content here</h2>
     </div>
         `;
-       noContainer.appendChild(noVideo);
+        noContainer.appendChild(noVideo);
     }
-    
-    
-    
+
+
+
     else {
         allData.forEach((video) => {
+            console.log(video?.others?.posted_date);
             const div = document.createElement('div');
             div.innerHTML = `
         <div class="card bg-base-100">
 
-        <figure><img src="${video?.thumbnail}" alt="video thumble" class = "rounded-lg h-72 w-full" /></figure>
+        <figure>
+            <img src="${video?.thumbnail}" alt="video thumble" class="rounded-lg h-72 w-full" />
+            ${video?.others?.posted_date ? `
+            <div class="absolute bottom-0 mb-40 right-3 rounded-lg bg-gray-600">
+            <p class="text-center">${convertToHoursMinutes(video.others.posted_date)}</p>
+            </div>` : ''}
+        </figure>
+
+
 
     <div class="flex">
         <div class="py-3 px-2">
@@ -82,3 +91,12 @@ const handleVideos = async (categoryId) => {
 
 handleCategory();
 handleVideos("1000");
+
+convertToHoursMinutes = (postedDate) => {
+    const hours = Math.floor(postedDate / 3600);
+    const minutes = hours % 60;
+
+    const timeString = `${hours}:hrs ${minutes}:min ago`;
+
+    return timeString;
+}
