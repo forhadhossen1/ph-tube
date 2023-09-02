@@ -23,10 +23,11 @@
         }
 
         .btn:focus {
-            background-color: rgb(250, 89, 89);
+            background-color: rgb(246, 48, 48);
             color: white;
             transition: background-color 0.3s, color 0.3s;
             border: none;
+            border-radius: 5p;
         }
     </style>
 </head>
@@ -46,18 +47,18 @@
                         </label>
                         <ul tabindex="0"
                             class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <button class="btn">Sort by view</button>
+                            <!-- <button id="sort-btn" class="btn">Sort by view</button> -->
                         </ul>
                     </div>
                     <a class="normal-case text-xl"><img src="Logo.png" alt=""></a>
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
-                        <button class="btn normal-case text-lg">Sort by view</button>
+                        <button id="sort-btn" class="btn normal-case text-lg">Sort by view</button>
                     </ul>
                 </div>
                 <div class="navbar-end">
-                    <a href="blog.html" class="btn bg-red-500 text-white border-none normal-case hover:bg-gray-500 px-8">Blog</a>
+                    <a href="blog.html" target="_blank" class="btn bg-red-500 text-white border-none normal-case hover:bg-gray-500 px-8">Blog</a>
                 </div>
             </div>
         </nav>
